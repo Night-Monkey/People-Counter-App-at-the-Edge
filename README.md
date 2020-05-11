@@ -16,6 +16,8 @@ The counter will use the Inference Engine included in the Intel® Distribution o
 
 You will choose a model to use and convert it with the Model Optimizer.
 
+In this project, you will utilize the Intel® Distribution of the OpenVINO™ Toolkit to build a People Counter app for inference at the edge. You will investigate different pre-trained models for person detection, and then convert the best model for optimized inference. The model will be deployed on the edge, such that only data on 1) the number of people in the frame, 2) time those people spent in frame, and 3) the total number of people counted are sent to a web server; inference will be done on the local machine. You will need to develop a method to compare the performance of your models before and after use of the Intel® Distribution of OpenVINO™ Toolkit for optimization for edge deployment. You will also examine potential use cases for your deployed people counter app.
+
 ![architectural diagram](./images/arch_diagram.png)
 
 ## Requirements
