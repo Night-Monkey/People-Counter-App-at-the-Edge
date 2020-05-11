@@ -10,6 +10,8 @@
 
 The people counter application will demonstrate how to create a smart video IoT solution using Intel® hardware and software tools. The app will detect people in a designated area, providing the number of people in the frame, average duration of people in frame, and total count.
 
+In this project, you will utilize the Intel® Distribution of the OpenVINO™ Toolkit to build a People Counter app for inference at the edge. You will investigate different pre-trained models for person detection, and then convert the best model for optimized inference. The model will be deployed on the edge, such that only data on 1) the number of people in the frame, 2) time those people spent in frame, and 3) the total number of people counted are sent to a web server; inference will be done on the local machine. You will need to develop a method to compare the performance of your models before and after use of the Intel® Distribution of OpenVINO™ Toolkit for optimization for edge deployment. You will also examine potential use cases for your deployed people counter app.
+
 ## How it Works
 
 The counter will use the Inference Engine included in the Intel® Distribution of OpenVINO™ Toolkit. The model used should be able to identify people in a video frame. The app should count the number of people in the current frame, the duration that a person is in the frame (time elapsed between entering and exiting a frame) and the total count of people. It then sends the data to a local web server using the Paho MQTT Python package.
