@@ -89,7 +89,18 @@ Discuss lighting, model accuracy, and camera focal length/image size, and the ef
 - Model accuracy is proportional to compute power and memory consumption. The higher the model accuracy, the more resoureces it would potentially need. I believe this is more dependant on the use case. To be more accuracy, it will be using more computatal processing power. 
 -  If end users would want to monitor wider area, then the high focal length camera is better option. The model can extract less information about object's in picture so it can lower the accuracy. If end users want to monitor very narrow place, then they can use low focal length camera.
 
-## Results
+## Output Results
 
-After my investigation on those four models, I had conclude very good, suitable, and accurate model that was in Intermediate Representations provided by Intel® [person-detection-retail-0013](https://docs.openvinotoolkit.org/latest/_models_intel_person_detection_retail_0013_description_person_detection_retail_001
+After my investigation on those four models, I had conclude very good, suitable, and accurate model that was in Intermediate Representations provided by Intel® [person-detection-retail-0013]
 
+Dowload the model 
+
+```
+python3  /opt/intel/openvino/deployment_tools/tools/model_downloader/downloader.py --name person-detection-retail-0013 -o /home/workspace/model/pre_trained/intel
+```
+
+Running the app 
+
+```
+python main.py -i resources/Pedestrian_Detect_2_1_1.mp4 -m model/pre_trained/intel/person-detection-retail-0013/intel/FP16/person-detection-retail-0013.xml -l /opt/intel/openvino/deployment_tools/inference_engine/lib/intel64/libcpu_extension_sse4.so -d CPU -pt 0.6 | ffmpeg -v warning -f rawvideo -pixel_format bgr24 -video_size 768x432 -framerate 24 -i - http://0.0.0.0:3004/fac.ffm
+```
